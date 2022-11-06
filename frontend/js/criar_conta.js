@@ -262,7 +262,7 @@ function criarConta() {
         "name": campoNome.value,
         "last_name": campoSobrenome.value,
         "mail": campoEmail.value,
-        "pasword": campoSenha.value,
+        "password": campoSenha.value,
         "cep": campoCEP.value
     };
     const json_new_user = JSON.stringify(new_user);
@@ -271,6 +271,6 @@ function criarConta() {
             method: "POST",
             headers: {'Content-Type': 'application/json'},
             body: json_new_user})
-        .then(onResponse)
-        .then(onTextReady);
+        // .then(onResponse)
+        // .then(onTextReady);
 }
