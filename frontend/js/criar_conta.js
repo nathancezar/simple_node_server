@@ -266,11 +266,16 @@ function criarConta() {
         "cep": campoCEP.value
     };
     const json_new_user = JSON.stringify(new_user);
+    console.log(json_new_user);
 
-    new_user_register = fetch('/check-user', {
+    fetch('http://localhost:3125/new-account', {
             method: "POST",
             headers: {'Content-Type': 'application/json'},
             body: json_new_user})
-        // .then(onResponse)
-        // .then(onTextReady);
+        .then((response) => {
+            console.log(response)
+        })
+        .catch((error) => {
+            console.log(error)
+        });
 }

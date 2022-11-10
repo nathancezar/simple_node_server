@@ -12,6 +12,7 @@
     <script src="./js/dropdown.js"></script>
     <script src="./js/script.js" defer></script>
     <script src="./js/criar_conta.js" defer></script>
+    <script src="./js/login.js" defer></script>
     <script src="./js/password_visibility.js" defer></script>
     <script src="./js/cpf.js"></script>
     <script src="./js/address_from_cep.js"></script>
@@ -84,7 +85,7 @@
         <div id="login-body">
           <h1>Entrar</h1>
           <form>
-              <label>E-mail:</label><input type="text">
+              <label>E-mail:</label><input id="login-email" type="text">
               <label>Senha:</label>
               <div class="passwordSpy">
                   <input id="login-password" type="password">
@@ -94,7 +95,7 @@
               <div></div>
               <div></div><div><input type="checkbox"> Manter conectado</div><div></div>
               <div></div>
-              <button id="botaoLogin">Entrar<i class="menuIcon material-icons">login</i></button>
+              <button id="botaoLogin" onclick="login()">Entrar<i class="menuIcon material-icons">login</i></button>
           </form>
       </div>
 
