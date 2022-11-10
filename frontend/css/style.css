@@ -175,3 +175,11 @@ form > #statusSenha {
 .progress-bar-success{
     background-color: #02b502;
 }
+
+#login-email {
+  color: black;
+}
+
+#login-password {
+  color: black;
+}

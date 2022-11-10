@@ -55,7 +55,7 @@ app.post('/login', (req, res) =>{
     
     if (mail in users_info && users_info[mail][password] == password) {
         console.log("Vai para Hello World");
-        // return res.render('./frontend/login.html');
+        res.status(200).json({loginSucess: true})
     } else {
         res.status(200).json({loginSucess: false})
     }

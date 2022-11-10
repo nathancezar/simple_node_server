@@ -185,7 +185,7 @@ async function validaNomeDoUsuario(campoNomeDoUsuario) {
         body: JSON.stringify({username: campoNomeUsuario.value})
     }
 
-    const result = await fetch("http://127.0.0.1:3125/check-user", options);
+    const result = await fetch("http://ine5646.nathan.cezar.vms.ufsc.br:3125/check-user", options);
     const serverResponse = await result.json();
     const statusUsername = document.getElementById("statusUsername");
     if (serverResponse.userExists) {

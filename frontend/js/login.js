@@ -1,7 +1,7 @@
 let campoSenhaLogin = document.getElementById("login-password")
 let campoEmailLogin = document.getElementById("login-email")
 
-function login() {
+async function login() {
     const data = {
         "mail": campoEmailLogin.value,
         "password": campoSenhaLogin.value
@@ -9,15 +9,16 @@ function login() {
     const json_data = JSON.stringify(data);
     console.log(json_data);
 
-    fetch('http://ine5646.nathan.cezar.vms.ufsc.br:3125/login', {
+    const response = await fetch('http://ine5646.nathan.cezar.vms.ufsc.br:3125/login', {
             method: "POST",
             headers: {'Content-Type': 'application/json'},
             body: json_data})
-        .then((response) => {
-            console.log(response)
-        })
-        .catch((error) => {
-            console.log(error)
-        });
+
+    const resultado = await response.json();
+    console.log(resultado);
+    if (resultado.loginSucess) {
+        mostrarTelaInicial()
+    }
+        
 
 }
