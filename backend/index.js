@@ -3,6 +3,34 @@ const cors = require('cors')
 const app = express()
 const port = process.env.PORT || 3125;
 
+const {MongoClient} = require('mongodb');
+
+const DB_NAME = 'users_databese';
+const MONGO_URL = `mongodb://ine5646.nathan.cezar.vms.ufsc.br/27017/${DB_NAME}`;
+
+var client = new MongoClient(MONGO_URL, {useUnifiedTopology: true});
+
+client.connect()
+    .then(onConnected)
+    .catch(erro => exitError(erro));
+
+function onConnected(client) {
+    db = client.db('DB_TEST');
+
+    const collection = db.collection('words');
+    insertWord("teste", "testando", collection);
+}
+
+async function insertWord(word, definition, collection){
+    const doc = {
+        word: word,
+        definition: definition
+    };
+
+    res = await collection.insertOne(doc);
+    console.log(`Adicionado: ${res.insertedId}`);
+}
+
 let users = ["ismaelseidel"]
 let users_info = {}
 
