@@ -268,7 +268,7 @@ function criarConta() {
     const json_new_user = JSON.stringify(new_user);
     console.log(json_new_user);
 
-    fetch('http://localhost:3125/new-account', {
+    fetch('http://ine5646.nathan.cezar.vms.ufsc.br:3125/new-account', {
             method: "POST",
             headers: {'Content-Type': 'application/json'},
             body: json_new_user})

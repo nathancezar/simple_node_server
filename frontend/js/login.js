@@ -9,7 +9,7 @@ function login() {
     const json_data = JSON.stringify(data);
     console.log(json_data);
 
-    fetch('http://localhost:3125/login', {
+    fetch('http://ine5646.nathan.cezar.vms.ufsc.br:3125/login', {
             method: "POST",
             headers: {'Content-Type': 'application/json'},
             body: json_data})
